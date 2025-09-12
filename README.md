@@ -8,8 +8,8 @@ GoReleaser example using GitHub.
 
 To create a new release:
 
-+ Tag your commit: git tag v1.0.0
-+ Push the tag: git push origin v1.0.0
++ Tag your commit: `git tag v1.0.0`
++ Push the tag: `git push origin v1.0.0`
 
 GitHub Actions will automatically:
 
