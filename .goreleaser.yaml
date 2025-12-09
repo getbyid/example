@@ -26,11 +26,11 @@ builds:
 archives:
 - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
   formats:
-  - tar.xz
+  - zip
   format_overrides:
-  - goos: windows
+  - goos: linux
     formats:
-    - zip
+    - tar.xz
   wrap_in_directory: true
   files:
   - LICENSE.md

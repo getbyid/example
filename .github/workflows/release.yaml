@@ -1,10 +1,6 @@
 name: Build and release
 
 on:
-  # Manual activation
-  workflow_dispatch:
-
-  # Any tag push
   push:
     tags:
     - 'v*'
@@ -13,21 +9,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
-        fetch-depth: 0
+        fetch-depth: 0 # required by goreleaser for the changelog
         fetch-tags: true
-    - name: Set up Go
-      uses: actions/setup-go@v6
+    - uses: actions/setup-go@v6
       with:
-        go-version: "stable"
-    - name: Create release
-      uses: goreleaser/goreleaser-action@v6
+        # go-version: '1.22'
+        go-version: 'stable'
+    - uses: goreleaser/goreleaser-action@v6
       with:
         distribution: goreleaser
         version: "~> v2"
         args: release --clean
       env:
-        GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
