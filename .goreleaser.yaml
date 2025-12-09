@@ -17,8 +17,6 @@ builds:
 
   ldflags:
   - -s -w
-  - -X main.BuildDate={{ .Date }}
-  - -X main.Version={{ .Version }}
 
 archives:
 - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"

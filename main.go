@@ -5,9 +5,12 @@ import (
 	"runtime"
 )
 
-var Version = "dev"
-var BuildDate = "---"
+var (
+    version = "dev"
+    commit  = "none"
+    date    = "unknown"
+)
 
 func main() {
-	fmt.Println("hello world, github! (", Version, BuildDate, runtime.GOOS, runtime.GOARCH, ")")
+	fmt.Println("hello world, github! (", version, commit, date, ")")
 }
