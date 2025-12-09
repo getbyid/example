@@ -1,3 +1,3 @@
-module github.com/goreleaser/example
+module github.com/getbyid/example
 
-go 1.19
+go 1.24.3

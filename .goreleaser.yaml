@@ -17,11 +17,8 @@ builds:
 
   ldflags:
   - -s -w
-  - -X main.commit={{.Commit}}
-  - -X main.date={{.Date}}
-  - -X main.builtBy=goreleaser
-  - -X main.Version={{.Version}}
-  - -X main.Revision={{.ShortCommit}}
+  - -X main.BuildDate={{ .Date }}
+  - -X main.Version={{ .Version }}
 
 archives:
 - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
